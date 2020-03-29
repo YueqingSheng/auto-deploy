@@ -17,7 +17,7 @@ router.post('/', (req, res) => {
 const spawn = require('child_process').spawn;
 
 router.get('/', function(req, res) {
-  var ls = cp.spawn('./log.sh'/*command*/, []/*args*/, {}/*options, [optional]*/);
+  var ls = spawn('./log.sh'/*command*/, []/*args*/, {}/*options, [optional]*/);
   ls.stdout.on('data', function (data) {
     console.log('stdout: ' + data);
   });
